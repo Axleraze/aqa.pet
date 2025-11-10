@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Here we're describing the FIND OWNERS page http://<yourAddress:port>/owners/find
+ * Here we're describing the FIND OWNERS page http://yourAddress:port/owners/find
  * due to POM concept: elements and methods
  */
 public class FindOwnersPage extends BasePage {
@@ -21,19 +21,27 @@ public class FindOwnersPage extends BasePage {
     private WebElement addOwnerButton;
 
 
-
     public FindOwnersPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
+
+// Check is Page loaded. Nested from Base Page PO class and added searchInputField appearance
+    @Override
+    public boolean isPageLoaded() {
+        return getHeader().isDisplayed() && searchInputField.isDisplayed();
+    }
+
+
     // Method to SEARCH an existing pet owner
-   public void searchOwner(String lastName){
+   public SearchResultsPage searchOwner(String lastName){
        searchInputField.sendKeys(lastName);
        findOwnerButton.click();
+       return new SearchResultsPage(driver);
    }
 
-   // Method to NAVIGATE to other page - AddNewOwner (to add new owner).
+   // Redirect to ADD OWNER Page
    public AddNewOwnerPage goToAddOwnerPage(){
         addOwnerButton.click();
         return new AddNewOwnerPage(driver);

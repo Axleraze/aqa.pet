@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Add new pet owner Page
+ * This PO Class is responsible for adding new pet OWNER
+ * and describes ADD OWNER Page
  */
 public class AddNewOwnerPage extends BasePage {
     @FindBy(xpath = "//input[@id='firstName']")
@@ -33,6 +34,17 @@ public class AddNewOwnerPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+
+    // Check that Page and header loaded
+    @Override
+    public boolean isPageLoaded() {
+        return getHeader().isDisplayed() && firstNameInputField.isDisplayed() ;
+    }
+
+    /**
+     *   Method combines all navigation actions to fill in required input fields to add new OWNER.
+     * @return OwnerProfilePage
+     */
     public OwnerProfilePage createNewOwner(String firstName, String lastName, String address, String city, String phone){
         firstNameInputField.sendKeys(firstName);
         lastNameInputField.sendKeys(lastName);

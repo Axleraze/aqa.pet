@@ -16,6 +16,11 @@ import java.util.concurrent.TimeUnit;
 abstract public class BaseTest {
     protected WebDriver driver;
 
+    /**
+     * setUp() method with annotation @BeforeEach is executed every time when other test method
+     * with @Test annotation is called. It's 1) checks and aligns chrome driver and web driver versions
+     * 2) initialises our WebDriver to ChromeDriver (we use Chrome Browser for our tests) 3) maximise browser window
+     */
     @BeforeEach
     public void setUp(){
         // 1. This library von B.Garcia that automatically download necessary chrome /ff webdriver and set it up
@@ -30,7 +35,7 @@ abstract public class BaseTest {
     }
 
 
-// 4 Close WebDriver and Chrome Tab
+// tearDown() method with  @AfterEach Close annotation closes Chrome Browser Window / Tab and closes  WebDriver
     @AfterEach
     public void tearDown() {
         if (driver != null) {

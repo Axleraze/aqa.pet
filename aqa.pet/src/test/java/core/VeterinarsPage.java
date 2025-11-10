@@ -9,6 +9,6 @@ public class VeterinarsPage extends BasePage{
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
-    // TODO add navigation throw pagination 1-2-...
+    // This page was not in Task.
+    // TODO add navigation throw pagination 1-2-... //may be later
 }
