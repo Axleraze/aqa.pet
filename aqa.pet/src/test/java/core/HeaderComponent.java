@@ -16,13 +16,13 @@ public class HeaderComponent {
     private WebElement navigationBar;
 
     // All 'deprecated' z.B. By.xpath("<my_xPath>") was replaced with @FindBy annotation
-    @FindBy(xpath = "//a[@title=\"find owners\"]" )
+    @FindBy(xpath = "//a[@title='find owners']" )
     private WebElement linkToFindOwners;
 
-    @FindBy(xpath = "//a[@title=\"veterinarians\"]")
+    @FindBy(xpath = "//a[@title='veterinarians']")
     private WebElement linkToVeterenars;
 
-    @FindBy(xpath = "//a[@title=\"home page\"]")
+    @FindBy(xpath = "//a[@title='home page']")
     private WebElement linkToHomePage;
 
 

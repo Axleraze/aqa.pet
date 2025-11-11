@@ -22,7 +22,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@id='main-navbar']")
             WebElement navbar;
 
-    @FindBy(xpath = "//a[@title=\"find owners\"]" )  // analog - 'deprecated' By.xpath("//a[@title=\"find owners\"]")
+    @FindBy(xpath = "//a[@title='find owners']" )  // analog - 'deprecated' By.xpath("//a[@title=\"find owners\"]")
     private WebElement linkToFindOwners;
 
     // 10 Create url variable and read in static block config file. This will be used in class CONSTRUCTOR with Factory

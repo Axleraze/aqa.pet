@@ -10,9 +10,11 @@ import org.openqa.selenium.support.PageFactory;
  * This page appears when the Last Name of owner is not unique, or when the search was made with empty parameters.
  */
 public class SearchResultsPage extends BasePage{
-
-    @FindBy(xpath = "//table[@id='owners']//a[contains(@href, '')]")
+// //table[@id='owners']//a[contains(@href, '')] diese Locator was Falsch. Am Ende nach dem Owner, Pet und Visit created wurde, Test hat durchgefallen
+    @FindBy(xpath = "//table[@id='owners']")
     WebElement linkFromOwnerSearchResult;
+
+
 
     @Override
     public boolean isPageLoaded() {
@@ -25,5 +27,4 @@ public class SearchResultsPage extends BasePage{
     }
 
 
-    // Do it later: 1) navigation in ownres link, 2) navigation in pagination
 }

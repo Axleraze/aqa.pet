@@ -12,8 +12,6 @@ abstract public class BasePage {
     protected final HeaderComponent header;   // this is our header
 
 
-//    //
-
     /**
      * In order to have all WebDriver Settings from  BaseTest class, create method to initialisate driver in Constructor.
      *
